@@ -1,5 +1,6 @@
-import { BookOpen, Calendar, ClipboardList, GraduationCap, Home, BarChart3, MessageSquare, Settings } from "lucide-react"
+import { BookOpen, Calendar, ClipboardList, GraduationCap, Home, BarChart3, MessageSquare, Settings, Users } from "lucide-react"
 import { NavLink, useLocation } from "react-router-dom"
+import { useLanguage } from "@/components/LanguageProvider"
 
 import {
   Sidebar,
@@ -14,17 +15,18 @@ import {
 } from "@/components/ui/sidebar"
 
 const navigationItems = [
-  { title: "Dashboard", url: "/", icon: Home },
-  { title: "Courses", url: "/courses", icon: BookOpen },
-  { title: "Grades", url: "/grades", icon: GraduationCap },
-  { title: "Assignments", url: "/assignments", icon: ClipboardList },
-  { title: "Calendar", url: "/calendar", icon: Calendar },
-  { title: "Analytics", url: "/analytics", icon: BarChart3 },
+  { title: "nav.dashboard", url: "/", icon: Home },
+  { title: "nav.courses", url: "/courses", icon: BookOpen },
+  { title: "nav.grades", url: "/grades", icon: GraduationCap },
+  { title: "nav.assignments", url: "/assignments", icon: ClipboardList },
+  { title: "nav.calendar", url: "/calendar", icon: Calendar },
+  { title: "nav.analytics", url: "/analytics", icon: BarChart3 },
+  { title: "nav.forums", url: "/forums", icon: Users },
 ]
 
 const secondaryItems = [
-  { title: "Messages", url: "/messages", icon: MessageSquare },
-  { title: "Settings", url: "/settings", icon: Settings },
+  { title: "nav.messages", url: "/messages", icon: MessageSquare },
+  { title: "nav.settings", url: "/settings", icon: Settings },
 ]
 
 export function AppSidebar() {
@@ -32,6 +34,7 @@ export function AppSidebar() {
   const collapsed = state === "collapsed"
   const location = useLocation()
   const currentPath = location.pathname
+  const { t } = useLanguage()
 
   const isActive = (path: string) => {
     if (path === "/") return currentPath === "/"
@@ -66,7 +69,7 @@ export function AppSidebar() {
 
         {/* Main Navigation */}
         <SidebarGroup className="px-3 py-4">
-          {!collapsed && <SidebarGroupLabel className="text-xs font-semibold text-muted-foreground mb-2">Learning</SidebarGroupLabel>}
+          {!collapsed && <SidebarGroupLabel className="text-xs font-semibold text-muted-foreground mb-2">{t("nav.dashboard")}</SidebarGroupLabel>}
           <SidebarGroupContent>
             <SidebarMenu>
               {navigationItems.map((item) => (
@@ -74,7 +77,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <NavLink to={item.url} className={getNavClass(item.url)}>
                       <item.icon className="w-5 h-5 flex-shrink-0" />
-                      {!collapsed && <span className="font-medium">{item.title}</span>}
+                      {!collapsed && <span className="font-medium">{t(item.title)}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -93,7 +96,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <NavLink to={item.url} className={getNavClass(item.url)}>
                       <item.icon className="w-5 h-5 flex-shrink-0" />
-                      {!collapsed && <span className="font-medium">{item.title}</span>}
+                      {!collapsed && <span className="font-medium">{t(item.title)}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

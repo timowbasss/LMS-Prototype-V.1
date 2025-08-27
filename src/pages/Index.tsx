@@ -4,8 +4,10 @@ import { PerformanceChart } from "@/components/PerformanceChart"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock } from "lucide-react"
+import { useLanguage } from "@/components/LanguageProvider"
 
 const Index = () => {
+  const { t } = useLanguage()
   const upcomingEvents = [
     { title: "Physics Lab", time: "10:00 AM", date: "Today" },
     { title: "Calculus Quiz", time: "2:00 PM", date: "Tomorrow" },
@@ -17,10 +19,10 @@ const Index = () => {
       {/* Welcome Section */}
       <div className="space-y-2">
         <h1 className="text-3xl font-bold text-foreground">
-          Welcome back, John! 👋
+          {t("welcome.title")}
         </h1>
         <p className="text-muted-foreground">
-          Here's what's happening with your studies today.
+          {t("welcome.subtitle")}
         </p>
       </div>
 
