@@ -14,13 +14,18 @@ import Grades from "./pages/Grades";
 import Assignments from "./pages/Assignments";
 import Forums from "./pages/Forums";
 import NotFound from "./pages/NotFound";
+import Auth from "./pages/Auth";
+import IvyShop from "./pages/IvyShop";
+import AssignmentDetail from "./pages/AssignmentDetail";
+import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="system" storageKey="ivy-stem-theme">
-      <LanguageProvider>
+    <AuthProvider>
+      <ThemeProvider defaultTheme="system" storageKey="ivy-stem-theme">
+        <LanguageProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -41,9 +46,12 @@ const App = () => (
                   <main className="flex-1 p-6 overflow-auto">
                     <Routes>
                       <Route path="/" element={<Index />} />
+                      <Route path="/auth" element={<Auth />} />
                       <Route path="/courses" element={<Courses />} />
                       <Route path="/grades" element={<Grades />} />
                       <Route path="/assignments" element={<Assignments />} />
+                      <Route path="/assignment/:id" element={<AssignmentDetail />} />
+                      <Route path="/ivy-shop" element={<IvyShop />} />
                       <Route path="/forums" element={<Forums />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
@@ -53,8 +61,9 @@ const App = () => (
             </SidebarProvider>
           </BrowserRouter>
         </TooltipProvider>
-      </LanguageProvider>
-    </ThemeProvider>
+        </LanguageProvider>
+      </ThemeProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
