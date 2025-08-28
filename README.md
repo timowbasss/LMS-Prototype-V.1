@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# <i class="fas fa-graduation-cap"></i> STEM Canvas Assist
 
-## Project info
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-**URL**: https://lovable.dev/projects/44ca05e9-4743-4b8b-bffc-5f7c101128fb
+<!-- Add Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-## How can I edit this code?
+A modern, responsive web application built to enhance the STEM learning experience. This project provides an intuitive interface for students and educators to manage and interact with course materials, assignments, and learning resources.
 
-There are several ways of editing your application.
+## <i class="fas fa-star"></i> Features
 
-**Use Lovable**
+- **Modern UI/UX** with dark/light theme support
+- **Responsive Design** that works on all devices
+- **Type-Safe** with TypeScript
+- **Fast Development** with Vite
+- **Beautiful Styling** with Tailwind CSS and shadcn/ui
+- **Easy Customization** with component-based architecture
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/44ca05e9-4743-4b8b-bffc-5f7c101128fb) and start prompting.
+## <i class="fas fa-rocket"></i> Quick Start
 
-Changes made via Lovable will be committed automatically to this repo.
+Get started with STEM Canvas Assist in just a few simple steps:
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 16+ (recommend using [nvm](https://github.com/nvm-sh/nvm))
+- npm or yarn package manager
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/stem-canvas-assist.git
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Navigate to the project directory
+cd stem-canvas-assist
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open [http://localhost:8080](http://localhost:8080) in your browser to see the application in action!
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## <i class="fas fa-tools"></i> Built With
 
-**Use GitHub Codespaces**
+- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript is a typed superset of JavaScript
+- [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## <i class="fas fa-folder-open"></i> Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # Reusable UI components
+├── contexts/      # React context providers
+├── data/          # Mock data and API services
+├── hooks/         # Custom React hooks
+├── pages/         # Page components
+└── styles/        # Global styles and theme configurations
+```
 
-This project is built with:
+## <i class="fas fa-hands-helping"></i> Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## How can I deploy this project?
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Simply open [Lovable](https://lovable.dev/projects/44ca05e9-4743-4b8b-bffc-5f7c101128fb) and click on Share -> Publish.
+## <i class="fas fa-file-alt"></i> License
 
-## Can I connect a custom domain to my Lovable project?
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Yes, you can!
+## <i class="fas fa-envelope"></i> Contact
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Project Link: [https://github.com/yourusername/stem-canvas-assist](https://github.com/yourusername/stem-canvas-assist)
+
+## <i class="fas fa-heart"></i> Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/) for the amazing component library
+- [Vite](https://vitejs.dev/) for the fantastic development experience
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
