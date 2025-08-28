@@ -33,10 +33,10 @@ Get started with STEM Canvas Assist in just a few simple steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/stem-canvas-assist.git
+git clone https://github.com/timowbasss/LMS-Prototype-V.1.git
 
 # Navigate to the project directory
-cd stem-canvas-assist
+cd LMS-Prototype-V.1
 
 # Install dependencies
 npm install
@@ -84,9 +84,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## <i class="fas fa-envelope"></i> Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
+Timo Hassan - [@timowbasss](https://github.com/timowbasss) - tayem.hassan@proton.me
 
-Project Link: [https://github.com/yourusername/stem-canvas-assist](https://github.com/yourusername/stem-canvas-assist)
+Project Link: [https://github.com/timowbasss/LMS-Prototype-V.1](https://github.com/timowbasss/LMS-Prototype-V.1)
 
 ## <i class="fas fa-heart"></i> Acknowledgments
 
