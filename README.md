@@ -1,4 +1,4 @@
-# <i class="fas fa-graduation-cap"></i> STEM Canvas Assist
+# <i class="fas fa-graduation-cap"></i> IVY Learning Hub
 
 <div align="center">
   <!-- Repository Status -->
