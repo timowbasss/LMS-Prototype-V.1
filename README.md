@@ -1,10 +1,28 @@
 # <i class="fas fa-graduation-cap"></i> STEM Canvas Assist
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+<div align="center">
+  <!-- GitHub Stats -->
+  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/stargazers">
+    <img src="https://img.shields.io/github/stars/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github&color=yellow" alt="GitHub Stars">
+  </a>
+  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/network/members">
+    <img src="https://img.shields.io/github/forks/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github&color=blue" alt="GitHub Forks">
+  </a>
+  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/issues">
+    <img src="https://img.shields.io/github/issues/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github" alt="GitHub Issues">
+  </a>
+  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/pulls">
+    <img src="https://img.shields.io/github/issues-pr/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github" alt="GitHub Pull Requests">
+  </a>
+  
+  <!-- Tech Stack -->
+  <br/>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+</div>
 
 <!-- Add Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
