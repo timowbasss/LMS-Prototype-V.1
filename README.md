@@ -97,7 +97,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## <i class="fas fa-envelope"></i> Contact
 
-Timo Hassan - [@timowbasss](https://github.com/timowbasss) - tayem.hassan@proton.me
+Tayem Hassan - [@timowbasss](https://github.com/timowbasss) - tayem.hassan@proton.me
 
 Project Link: [https://github.com/timowbasss/LMS-Prototype-V.1](https://github.com/timowbasss/LMS-Prototype-V.1)
 
