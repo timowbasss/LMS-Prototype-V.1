@@ -1,27 +1,22 @@
 # <i class="fas fa-graduation-cap"></i> STEM Canvas Assist
 
 <div align="center">
-  <!-- GitHub Stats -->
-  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/stargazers">
-    <img src="https://img.shields.io/github/stars/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github&color=yellow" alt="GitHub Stars">
+  <!-- Repository Status -->
+  <a href="#">
+    <img src="https://img.shields.io/badge/Status-Private%20Repository-6e40c9?style=for-the-badge&logo=github" alt="Private Repository">
   </a>
-  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/network/members">
-    <img src="https://img.shields.io/github/forks/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github&color=blue" alt="GitHub Forks">
-  </a>
-  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/issues">
-    <img src="https://img.shields.io/github/issues/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github" alt="GitHub Issues">
-  </a>
-  <a href="https://github.com/timowbasss/LMS-Prototype-V.1/pulls">
-    <img src="https://img.shields.io/github/issues-pr/timowbasss/LMS-Prototype-V.1?style=for-the-badge&logo=github" alt="GitHub Pull Requests">
+  <a href="#contact">
+    <img src="https://img.shields.io/badge/Contact-Access%20Request-2ea44f?style=for-the-badge&logo=github" alt="Contact for Access">
   </a>
   
   <!-- Tech Stack -->
-  <br/>
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+  <div style="margin-top: 15px;">
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
+    <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React">
+    <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+  </div>
 </div>
 
 <!-- Add Font Awesome -->
