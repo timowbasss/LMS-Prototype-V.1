@@ -17,6 +17,11 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import IvyShop from "./pages/IvyShop";
 import AssignmentDetail from "./pages/AssignmentDetail";
+import CourseDetail from "./pages/CourseDetail";
+import Calendar from "./pages/Calendar";
+import Analytics from "./pages/Analytics";
+import Settings from "./pages/Settings";
+import EveChatbot from "./components/EveChatbot";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
@@ -48,13 +53,18 @@ const App = () => (
                       <Route path="/" element={<Index />} />
                       <Route path="/auth" element={<Auth />} />
                       <Route path="/courses" element={<Courses />} />
+                      <Route path="/course/:courseId" element={<CourseDetail />} />
                       <Route path="/grades" element={<Grades />} />
                       <Route path="/assignments" element={<Assignments />} />
                       <Route path="/assignment/:id" element={<AssignmentDetail />} />
+                      <Route path="/calendar" element={<Calendar />} />
+                      <Route path="/analytics" element={<Analytics />} />
+                      <Route path="/settings" element={<Settings />} />
                       <Route path="/ivy-shop" element={<IvyShop />} />
                       <Route path="/forums" element={<Forums />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
+                    <EveChatbot />
                   </main>
                 </div>
               </div>

@@ -83,7 +83,10 @@ const Courses = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-2">
-                    <Button className="bg-gradient-primary hover:opacity-90">
+                    <Button 
+                      className="bg-gradient-primary hover:opacity-90"
+                      onClick={() => window.location.href = `/course/${course.id}`}
+                    >
                       Enter Course
                     </Button>
                     <Button variant="outline" className="bg-gradient-subtle">
