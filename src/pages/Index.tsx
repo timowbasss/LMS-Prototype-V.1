@@ -51,6 +51,36 @@ const Index = () => {
         </div>
 
         <div className="space-y-6">
+          {/* Study Hours Today */}
+          <Card className="shadow-soft">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-primary" />
+                Today's Study Time
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-2">4.2h</div>
+                <p className="text-sm text-muted-foreground">Hours studied today</p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex justify-between text-xs">
+                    <span>Physics</span>
+                    <span>1.5h</span>
+                  </div>
+                  <div className="flex justify-between text-xs">
+                    <span>Math</span>
+                    <span>2.0h</span>
+                  </div>
+                  <div className="flex justify-between text-xs">
+                    <span>Chemistry</span>
+                    <span>0.7h</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Upcoming Schedule */}
           <Card className="shadow-soft">
             <CardHeader>
