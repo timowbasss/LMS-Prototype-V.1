@@ -30,7 +30,6 @@ import { HeatMapComponent } from '@/components/HeatMapComponent';
 import { DependencyTree } from '@/components/DependencyTree';
 import { ProgressAnalytics } from '@/components/ProgressAnalytics';
 import { StudentPlanner } from '@/components/StudentPlanner';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
 interface StudySession {
