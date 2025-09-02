@@ -23,58 +23,77 @@ import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import EveChatbot from "./components/EveChatbot";
 import { AuthProvider } from "./contexts/AuthContext";
+import MindMap from "./pages/MindMap";
+import HeatMap from "./pages/HeatMap";
+import DependencyTreePage from "./pages/DependencyTree";
+import Messages from "./pages/Messages";
+import Assignment from "./pages/Assignment";
+import ContactInstructor from "./pages/ContactInstructor";
+import { SpotlightSearch } from "./components/SpotlightSearch";
+import { useState } from "react";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <ThemeProvider defaultTheme="system" storageKey="ivy-stem-theme">
-        <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <SidebarProvider>
-              <div className="min-h-screen flex w-full bg-background">
-                <AppSidebar />
-                <div className="flex-1 flex flex-col">
-                  <header className="h-14 border-b bg-background flex items-center justify-between px-4">
-                    <div className="flex items-center">
-                      <SidebarTrigger />
-                      <div className="ml-4">
-                        <h1 className="text-lg font-semibold text-foreground">Ivy STEM Learning Hub</h1>
-                      </div>
+const App = () => {
+  const [spotlightOpen, setSpotlightOpen] = useState(false);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <ThemeProvider defaultTheme="system" storageKey="ivy-stem-theme">
+          <LanguageProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <SidebarProvider>
+                  <div className="min-h-screen flex w-full bg-background">
+                    <AppSidebar />
+                    <div className="flex-1 flex flex-col">
+                      <header className="h-14 border-b bg-background flex items-center justify-between px-4">
+                        <div className="flex items-center">
+                          <SidebarTrigger />
+                          <div className="ml-4">
+                            <h1 className="text-lg font-semibold text-foreground">Ivy STEM Learning Hub</h1>
+                          </div>
+                        </div>
+                        <HeaderDropdown />
+                      </header>
+                      <main className="flex-1 p-6 overflow-auto">
+                        <Routes>
+                          <Route path="/" element={<Index />} />
+                          <Route path="/auth" element={<Auth />} />
+                          <Route path="/courses" element={<Courses />} />
+                          <Route path="/course/:courseId" element={<CourseDetail />} />
+                          <Route path="/grades" element={<Grades />} />
+                          <Route path="/assignments" element={<Assignments />} />
+                          <Route path="/assignment/:id" element={<AssignmentDetail />} />
+                          <Route path="/calendar" element={<Calendar />} />
+                          <Route path="/analytics" element={<Analytics />} />
+                          <Route path="/mindmap" element={<MindMap />} />
+                          <Route path="/heatmap" element={<HeatMap />} />
+                          <Route path="/dependency-tree" element={<DependencyTreePage />} />
+                          <Route path="/messages" element={<Messages />} />
+                          <Route path="/assignment-demo" element={<Assignment />} />
+                          <Route path="/contact-instructor" element={<ContactInstructor />} />
+                          <Route path="/settings" element={<Settings />} />
+                          <Route path="/ivy-shop" element={<IvyShop />} />
+                          <Route path="/forums" element={<Forums />} />
+                          <Route path="*" element={<NotFound />} />
+                        </Routes>
+                        <EveChatbot />
+                        <SpotlightSearch open={spotlightOpen} onOpenChange={setSpotlightOpen} />
+                      </main>
                     </div>
-                    <HeaderDropdown />
-                  </header>
-                  <main className="flex-1 p-6 overflow-auto">
-                    <Routes>
-                      <Route path="/" element={<Index />} />
-                      <Route path="/auth" element={<Auth />} />
-                      <Route path="/courses" element={<Courses />} />
-                      <Route path="/course/:courseId" element={<CourseDetail />} />
-                      <Route path="/grades" element={<Grades />} />
-                      <Route path="/assignments" element={<Assignments />} />
-                      <Route path="/assignment/:id" element={<AssignmentDetail />} />
-                      <Route path="/calendar" element={<Calendar />} />
-                      <Route path="/analytics" element={<Analytics />} />
-                      <Route path="/settings" element={<Settings />} />
-                      <Route path="/ivy-shop" element={<IvyShop />} />
-                      <Route path="/forums" element={<Forums />} />
-                      <Route path="*" element={<NotFound />} />
-                    </Routes>
-                    <EveChatbot />
-                  </main>
-                </div>
-              </div>
-            </SidebarProvider>
-          </BrowserRouter>
-        </TooltipProvider>
-        </LanguageProvider>
-      </ThemeProvider>
-    </AuthProvider>
-  </QueryClientProvider>
-);
+                  </div>
+                </SidebarProvider>
+              </BrowserRouter>
+            </TooltipProvider>
+          </LanguageProvider>
+        </ThemeProvider>
+      </AuthProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

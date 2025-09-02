@@ -81,6 +81,36 @@ const Index = () => {
             </CardContent>
           </Card>
 
+          {/* Notifications */}
+          <Card className="shadow-soft">
+            <CardHeader>
+              <CardTitle>Notifications</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-start gap-3 p-3 bg-gradient-subtle rounded-lg border">
+                <span className="w-2 h-2 rounded-full bg-primary mt-1" />
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-foreground">New message from Dr. Johnson</p>
+                  <p className="text-xs text-muted-foreground">“Please review the calculus worksheet before tomorrow’s class.”</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-3 bg-gradient-subtle rounded-lg border">
+                <span className="w-2 h-2 rounded-full bg-accent mt-1" />
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-foreground">Announcement: Lab Safety Seminar</p>
+                  <p className="text-xs text-muted-foreground">Mandatory for all science students • Sep 12, 11:00 AM</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-3 bg-gradient-subtle rounded-lg border">
+                <span className="w-2 h-2 rounded-full bg-warning mt-1" />
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-foreground">Pending Assignment: Physics Problem Set</p>
+                  <p className="text-xs text-muted-foreground">Due in 2 days • 10 questions</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Upcoming Schedule */}
           <Card className="shadow-soft">
             <CardHeader>

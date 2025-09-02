@@ -184,7 +184,7 @@ const CourseDetail = () => {
           </TabsTrigger>
           <TabsTrigger value="dependency" className="flex items-center gap-2">
             <GitBranch className="h-4 w-4" />
-            Dependencies
+            Dependency Tree
           </TabsTrigger>
           <TabsTrigger value="syllabus" className="flex items-center gap-2">
             <BookOpen className="h-4 w-4" />
@@ -338,13 +338,25 @@ const CourseDetail = () => {
                   <CardTitle>Quick Actions</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <Button variant="outline" className="w-full justify-start">
+                  <Button variant="outline" className="w-full justify-start" onClick={() => setActiveTab('analytics')}>
+                    <BarChart3 className="h-4 w-4 mr-2" />
+                    View Analytics
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start" onClick={() => setActiveTab('mindmap')}>
+                    <Brain className="h-4 w-4 mr-2" />
+                    Open Mind Map
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start" onClick={() => setActiveTab('heatmap')}>
+                    <Thermometer className="h-4 w-4 mr-2" />
+                    Open Heat Map
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start" onClick={() => setActiveTab('dependency')}>
+                    <GitBranch className="h-4 w-4 mr-2" />
+                    Open Dependency Tree
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start" onClick={() => navigate('/messages')}>
                     <MessageSquare className="h-4 w-4 mr-2" />
                     Message Teacher
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start">
-                    <Clock className="h-4 w-4 mr-2" />
-                    Set Reminder
                   </Button>
                 </CardContent>
               </Card>

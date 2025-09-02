@@ -67,6 +67,12 @@ const Settings = () => {
       case 'reducedMotion':
         document.body.classList.toggle('reduced-motion', value);
         break;
+      case 'screenReader':
+        document.body.classList.toggle('sr-support', value);
+        break;
+      case 'keyboardNavigation':
+        document.body.classList.toggle('kbd-navigation', value);
+        break;
       case 'fontSize':
         document.documentElement.style.fontSize = `${value[0]}px`;
         break;

@@ -45,7 +45,7 @@ export function HeaderDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="w-56 bg-card/95 backdrop-blur-sm border shadow-large z-50"
+        className="w-56 bg-card border shadow-large z-[100]"
       >
         <DropdownMenuLabel className="font-semibold">Preferences</DropdownMenuLabel>
         <DropdownMenuSeparator />
