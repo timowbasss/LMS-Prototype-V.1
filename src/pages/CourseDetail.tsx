@@ -20,7 +20,9 @@ import {
   Video,
   Users,
   MessageSquare,
-  Clock
+  Clock,
+  Target,
+  TrendingUp
 } from 'lucide-react';
 import { mockCourses, mockAssignments, mockGrades } from '@/data/mockData';
 import { MindMapComponent } from '@/components/MindMapComponent';
@@ -28,6 +30,7 @@ import { HeatMapComponent } from '@/components/HeatMapComponent';
 import { DependencyTree } from '@/components/DependencyTree';
 import { ProgressAnalytics } from '@/components/ProgressAnalytics';
 import { StudentPlanner } from '@/components/StudentPlanner';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
 interface StudySession {
@@ -366,12 +369,93 @@ const CourseDetail = () => {
 
         {/* Analytics Tab */}
         <TabsContent value="analytics">
-          <ProgressAnalytics assignmentId={courseId || 'default'} />
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <BarChart3 className="h-5 w-5" />
+                  Course Analytics
+                </CardTitle>
+                <CardDescription>
+                  Detailed performance analytics for {course.name}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-primary" />
+                      <h3 className="font-semibold">Time Invested</h3>
+                    </div>
+                    <p className="text-2xl font-bold text-primary">24.5h</p>
+                    <p className="text-sm text-muted-foreground">Total study time</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-success" />
+                      <h3 className="font-semibold">Performance</h3>
+                    </div>
+                    <p className="text-2xl font-bold text-success">{course.grade}</p>
+                    <p className="text-sm text-muted-foreground">Current grade</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <FileText className="h-4 w-4 text-info" />
+                      <h3 className="font-semibold">Assignments</h3>
+                    </div>
+                    <p className="text-2xl font-bold text-info">{courseAssignments.length}</p>
+                    <p className="text-sm text-muted-foreground">Total assignments</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Target className="h-4 w-4 text-warning" />
+                      <h3 className="font-semibold">Progress</h3>
+                    </div>
+                    <p className="text-2xl font-bold text-warning">{course.progress}%</p>
+                    <p className="text-sm text-muted-foreground">Course completion</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <ProgressAnalytics assignmentId={courseId || 'default'} />
+          </div>
         </TabsContent>
 
         {/* Mind Map Tab */}
         <TabsContent value="mindmap">
-          <MindMapComponent assignmentId="course-mindmap" />
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Brain className="h-5 w-5" />
+                  Course Mind Map
+                </CardTitle>
+                <CardDescription>
+                  Create visual mind maps to organize course concepts and topics
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center py-4">
+                  <p className="text-muted-foreground mb-4">
+                    Use mind maps to connect ideas, plan your studies, and visualize course relationships.
+                  </p>
+                  <Button 
+                    className="bg-gradient-primary hover:opacity-90"
+                    onClick={() => navigate('/mindmap')}
+                  >
+                    <Brain className="h-4 w-4 mr-2" />
+                    Open Full Mind Map Tool
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <MindMapComponent assignmentId={`course-${courseId}`} />
+          </div>
         </TabsContent>
 
         {/* Heat Map Tab */}
