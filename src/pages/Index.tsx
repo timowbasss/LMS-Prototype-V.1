@@ -3,11 +3,21 @@ import { CourseGrid } from "@/components/CourseGrid"
 import { PerformanceChart } from "@/components/PerformanceChart"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock } from "lucide-react"
+import { Calendar, Clock, TrendingUp, BookOpen } from "lucide-react"
 import { useLanguage } from "@/components/LanguageProvider"
+import { useState, useEffect } from "react"
 
 const Index = () => {
   const { t } = useLanguage()
+  const [todayStudyTime, setTodayStudyTime] = useState({
+    total: 4.2,
+    subjects: [
+      { name: 'Physics', hours: 1.5, color: 'bg-blue-500' },
+      { name: 'Math', hours: 2.0, color: 'bg-green-500' },
+      { name: 'Chemistry', hours: 0.7, color: 'bg-orange-500' }
+    ]
+  })
+
   const upcomingEvents = [
     { title: "Physics Lab", time: "10:00 AM", date: "Today" },
     { title: "Calculus Quiz", time: "2:00 PM", date: "Tomorrow" },
@@ -61,20 +71,23 @@ const Index = () => {
             </CardHeader>
             <CardContent>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">4.2h</div>
+                <div className="text-3xl font-bold text-primary mb-2">{todayStudyTime.total}h</div>
                 <p className="text-sm text-muted-foreground">Hours studied today</p>
                 <div className="mt-4 space-y-2">
-                  <div className="flex justify-between text-xs">
-                    <span>Physics</span>
-                    <span>1.5h</span>
-                  </div>
-                  <div className="flex justify-between text-xs">
-                    <span>Math</span>
-                    <span>2.0h</span>
-                  </div>
-                  <div className="flex justify-between text-xs">
-                    <span>Chemistry</span>
-                    <span>0.7h</span>
+                  {todayStudyTime.subjects.map((subject, index) => (
+                    <div key={index} className="flex justify-between items-center text-xs">
+                      <div className="flex items-center gap-2">
+                        <div className={`w-2 h-2 rounded-full ${subject.color}`} />
+                        <span>{subject.name}</span>
+                      </div>
+                      <span className="font-medium">{subject.hours}h</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 pt-3 border-t">
+                  <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                    <TrendingUp className="h-3 w-3" />
+                    <span>+0.5h from yesterday</span>
                   </div>
                 </div>
               </div>

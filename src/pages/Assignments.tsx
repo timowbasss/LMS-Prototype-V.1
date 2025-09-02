@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, FileText, AlertCircle } from "lucide-react"
 import { mockAssignments } from "@/data/mockData"
+import { useNavigate } from "react-router-dom"
 
 const Assignments = () => {
+  const navigate = useNavigate()
+
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'pending':
@@ -97,7 +100,10 @@ const Assignments = () => {
                       <Badge className={getStatusColor(assignment.status)}>
                         {assignment.status.charAt(0).toUpperCase() + assignment.status.slice(1)}
                       </Badge>
-                      <Button className="bg-gradient-primary hover:opacity-90">
+                      <Button 
+                        className="bg-gradient-primary hover:opacity-90"
+                        onClick={() => navigate('/assignment-demo')}
+                      >
                         Start Assignment
                       </Button>
                     </div>

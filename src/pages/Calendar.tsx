@@ -14,70 +14,6 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { toast } from 'sonner';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-// Calendar theme styles
-const calendarStyles = `
-  .rbc-calendar {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-  }
-  .rbc-header {
-    background-color: hsl(var(--muted));
-    color: hsl(var(--muted-foreground));
-    border-bottom: 1px solid hsl(var(--border));
-    padding: 0.5rem;
-    font-weight: 600;
-  }
-  .rbc-month-view, .rbc-time-view {
-    border: 1px solid hsl(var(--border));
-    background-color: hsl(var(--card));
-  }
-  .rbc-date-cell {
-    color: hsl(var(--muted-foreground));
-  }
-  .rbc-date-cell > a {
-    color: hsl(var(--foreground));
-  }
-  .rbc-today {
-    background-color: hsl(var(--primary) / 0.1);
-  }
-  .rbc-off-range {
-    color: hsl(var(--muted-foreground) / 0.5);
-  }
-  .rbc-current-time-indicator {
-    background-color: hsl(var(--primary));
-  }
-  .rbc-time-slot {
-    border-top: 1px solid hsl(var(--border));
-  }
-  .rbc-time-gutter .rbc-timeslot-group {
-    border-bottom: 1px solid hsl(var(--border));
-  }
-  .rbc-time-header > .rbc-row {
-    border-bottom: 1px solid hsl(var(--border));
-  }
-  .rbc-toolbar {
-    background-color: hsl(var(--background));
-    border-bottom: 1px solid hsl(var(--border));
-    padding: 1rem;
-  }
-  .rbc-toolbar button {
-    background-color: hsl(var(--secondary));
-    color: hsl(var(--secondary-foreground));
-    border: 1px solid hsl(var(--border));
-    padding: 0.5rem 1rem;
-    margin: 0 0.25rem;
-    border-radius: 0.375rem;
-    font-weight: 500;
-  }
-  .rbc-toolbar button:hover {
-    background-color: hsl(var(--secondary) / 0.8);
-  }
-  .rbc-toolbar button.rbc-active {
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-  }
-`;
-
 const localizer = momentLocalizer(moment);
 
 interface CalendarEvent {
@@ -154,20 +90,30 @@ const Calendar = () => {
   const fetchSchoolEvents = async () => {
     // Mock school events with more realistic dates
     const today = new Date();
-    const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
-    const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 15);
+    const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+    const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000); 
+    const nationalDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5);
+    const scienceFair = new Date(today.getFullYear(), today.getMonth() + 1, 10);
     
     const schoolEvents: CalendarEvent[] = [
       {
         id: 'school-1',
+        title: 'Physics Midterm Exam',
+        start: tomorrow,
+        end: new Date(tomorrow.getTime() + 2 * 60 * 60 * 1000), // 2 hours
+        type: 'assignment',
+        description: 'Midterm examination covering chapters 1-5'
+      },
+      {
+        id: 'school-2',
         title: 'National Egypt Day',
-        start: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3),
-        end: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3),
+        start: nationalDay,
+        end: nationalDay,
         type: 'school',
         description: 'National holiday - No classes'
       },
       {
-        id: 'school-2', 
+        id: 'school-3',
         title: 'Final Exams Week',
         start: nextWeek,
         end: new Date(nextWeek.getTime() + 5 * 24 * 60 * 60 * 1000),
@@ -175,21 +121,29 @@ const Calendar = () => {
         description: 'Final examination period for all subjects'
       },
       {
-        id: 'school-3',
+        id: 'school-4',
         title: 'Science Fair',
-        start: nextMonth,
-        end: nextMonth,
+        start: scienceFair,
+        end: scienceFair,
         type: 'school',
         description: 'Annual Science Fair - Main Gymnasium',
         location: 'Main Gymnasium'
       },
       {
-        id: 'school-4',
+        id: 'school-5',
         title: 'Parent-Teacher Conference',
-        start: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5),
-        end: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5),
+        start: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 10),
+        end: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 10),
         type: 'school',
         description: 'Meet with teachers to discuss student progress'
+      },
+      {
+        id: 'school-6',
+        title: 'Chemistry Lab Session',
+        start: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2, 14, 0),
+        end: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2, 16, 0),
+        type: 'school',
+        description: 'Organic Chemistry Lab - Room 204'
       }
     ];
 
@@ -293,7 +247,6 @@ const Calendar = () => {
 
   return (
     <div className="space-y-8">
-      <style>{calendarStyles}</style>
       <div className="flex items-center justify-between">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold text-foreground">{t ? t('calendar.title') : 'Calendar'}</h1>

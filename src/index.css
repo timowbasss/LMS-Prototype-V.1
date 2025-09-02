@@ -167,3 +167,92 @@ All colors MUST be HSL.
     box-shadow: 0 0 0 3px hsl(var(--ring) / 0.4);
   }
 }
+
+/* Calendar theme fixes */
+.rbc-calendar {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.rbc-header {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--muted-foreground)) !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+}
+
+.rbc-month-view, .rbc-time-view {
+  border: 1px solid hsl(var(--border)) !important;
+  background-color: hsl(var(--card)) !important;
+}
+
+.rbc-date-cell {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.rbc-date-cell > a {
+  color: hsl(var(--foreground)) !important;
+}
+
+.rbc-today {
+  background-color: hsl(var(--primary) / 0.1) !important;
+}
+
+.rbc-off-range {
+  color: hsl(var(--muted-foreground) / 0.5) !important;
+}
+
+.rbc-toolbar {
+  background-color: hsl(var(--background)) !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.rbc-toolbar button {
+  background-color: hsl(var(--secondary)) !important;
+  color: hsl(var(--secondary-foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+}
+
+.rbc-toolbar button:hover {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.rbc-time-slot {
+  border-top: 1px solid hsl(var(--border)) !important;
+}
+
+.rbc-time-gutter .rbc-timeslot-group {
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.rbc-time-header > .rbc-row {
+  border-bottom: 1px solid hsl(var(--border)) !important;
+}
+
+.rbc-time-content {
+  border-top: 1px solid hsl(var(--border)) !important;
+}
+
+.rbc-allday-cell {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.rbc-day-slot .rbc-time-slot {
+  border-top: 1px solid hsl(var(--border)) !important;
+}
+
+.rbc-time-view .rbc-time-gutter {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.rbc-time-view .rbc-time-content > * + * > * {
+  border-left: 1px solid hsl(var(--border)) !important;
+}

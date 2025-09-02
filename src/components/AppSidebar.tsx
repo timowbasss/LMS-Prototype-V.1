@@ -1,6 +1,7 @@
 import { BookOpen, Calendar, ClipboardList, GraduationCap, Home, BarChart3, MessageSquare, Settings, Users } from "lucide-react"
 import { NavLink, useLocation } from "react-router-dom"
 import { useLanguage } from "@/components/LanguageProvider"
+import { useState, useEffect } from "react"
 
 import {
   Sidebar,
@@ -35,6 +36,19 @@ export function AppSidebar() {
   const location = useLocation()
   const currentPath = location.pathname
   const { t } = useLanguage()
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setSearchOpen(true)
+      }
+    }
+
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
+  }, [])
 
   const isActive = (path: string) => {
     if (path === "/") return currentPath === "/"

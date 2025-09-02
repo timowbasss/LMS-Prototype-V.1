@@ -30,12 +30,24 @@ import Messages from "./pages/Messages";
 import Assignment from "./pages/Assignment";
 import ContactInstructor from "./pages/ContactInstructor";
 import { SpotlightSearch } from "./components/SpotlightSearch";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   const [spotlightOpen, setSpotlightOpen] = useState(false);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setSpotlightOpen(true);
+      }
+    };
+
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
