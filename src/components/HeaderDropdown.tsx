@@ -13,10 +13,13 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useTheme } from "@/components/ThemeProvider"
 import { useLanguage } from "@/components/LanguageProvider"
+import { ThemeCustomizer } from "@/components/ThemeCustomizer"
+import { useState } from "react"
 
 export function HeaderDropdown() {
   const { theme, setTheme } = useTheme()
   const { language, setLanguage, t } = useLanguage()
+  const [showThemeCustomizer, setShowThemeCustomizer] = useState(false)
 
   const languages = [
     { code: "en" as const, name: t("language.english"), flag: "🇺🇸" },
@@ -95,7 +98,22 @@ export function HeaderDropdown() {
             ))}
           </DropdownMenuSubContent>
         </DropdownMenuSub>
+
+        <DropdownMenuSeparator />
+        
+        <DropdownMenuItem 
+          onClick={() => setShowThemeCustomizer(true)}
+          className="cursor-pointer"
+        >
+          <Palette className="mr-2 h-4 w-4" />
+          <span>Color Themes</span>
+        </DropdownMenuItem>
       </DropdownMenuContent>
+      
+      <ThemeCustomizer 
+        open={showThemeCustomizer} 
+        onOpenChange={setShowThemeCustomizer} 
+      />
     </DropdownMenu>
   )
 }

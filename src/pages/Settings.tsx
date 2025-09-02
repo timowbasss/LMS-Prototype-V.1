@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { useLanguage } from '@/components/LanguageProvider';
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/components/ThemeProvider';
 import { 
   Settings as SettingsIcon, 
   Palette, 
@@ -115,9 +115,9 @@ const Settings = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-foreground">Settings</h1>
+        <h1 className="text-3xl font-bold text-foreground">{t('settings.title')}</h1>
         <p className="text-muted-foreground">
-          Customize your learning experience and accessibility preferences.
+          {t('settings.subtitle')}
         </p>
       </div>
 
