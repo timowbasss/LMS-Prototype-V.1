@@ -293,7 +293,7 @@ const EveChatbot = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask Eve anything..."
+                  placeholder={isLoading ? "Eve is thinking..." : "Ask Eve anything about your studies..."}
                   className="flex-1"
                   disabled={isLoading}
                 />
